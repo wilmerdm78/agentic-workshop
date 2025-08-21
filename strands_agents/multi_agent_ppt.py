@@ -16,10 +16,16 @@ aws_docs_client = MCPClient(
 aws_diag_client = MCPClient(
     lambda: stdio_client(
         StdioServerParameters(
-            command="uvx", args=["awslabs.aws-diagram-mcp-server@latest"]
+            command="uvx",
+            args=[
+                "--with",
+                "sarif-om,jschema_to_python",
+                "awslabs.aws-diagram-mcp-server@latest",
+            ],
         )
     )
 )
+
 
 # Cost Analysis MCP Client
 cost_analysis_client = MCPClient(
