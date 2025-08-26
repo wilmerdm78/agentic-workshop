@@ -39,5 +39,5 @@ with aws_diag_client, aws_docs_client:
     agent = Agent(tools=all_tools, model=bedrock_model, system_prompt=SYSTEM_PROMPT)
 
     response = agent(
-        "Get the documentation for AWS Lambda then create a diagram of a website that uses AWS Lambda for a static website hosted on S3"
+        "Create a diagram of a serverless application with API Gateway, Lambda, and DynamoDB"
     )
